@@ -26,6 +26,9 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
   flare_flutter: ^1.2.3
+  shared_preferences: ^0.5.1+1
+  synchronized: ^2.1.0
+  scoped_model: ^1.0.1
 
 dev_dependencies:
   flutter_test:
@@ -47,6 +50,13 @@ flutter:
   - assets/lang/en.json
   - assets/lang/it.json
   - assets/flare/grass.flr
+
+  fonts:
+  - family: Pacifico
+    fonts:
+      - asset: assets/fonts/pacifico-regular.ttf
+
+
 
   # To add assets to your application, add an assets section, like this:
   # assets:

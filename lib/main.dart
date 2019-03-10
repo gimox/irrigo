@@ -10,7 +10,7 @@ import 'package:irrigo/app_config.dart';
 import 'package:irrigo/app_bootstrap.dart';
 
 void main() async {
-  final app = await AppBootstrap().getApp();
+  final app =  AppBootstrap().getApp();
 
   var configuredApp = new AppConfig(
       appName: 'Irrigo',

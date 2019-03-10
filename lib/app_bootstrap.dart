@@ -5,16 +5,14 @@
  * Giorgio Modoni <modogio@gmail.com>
  */
 
-
 import 'package:irrigo/src/app.dart';
 import 'package:flutter/services.dart';
+import 'package:irrigo/src/models/app_state_model.dart';
 
-class AppBootstrap  {
-
-  Future<App> getApp() async {
+class AppBootstrap {
+  App getApp() {
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light);
 
-    return App();
+    return App(appStateModel: AppStateModel());
   }
-
 }

@@ -11,7 +11,7 @@ ThemeData appTheme() {
   final ThemeData base = ThemeData.light();
   return base.copyWith(
     accentColor: Colors.orange,
-    primaryColor: customPrimary,
+    primaryColor: Colors.green,
     /*
     buttonColor: kShrinePink100,
     scaffoldBackgroundColor: kShrineBackgroundWhite,
@@ -28,7 +28,7 @@ ThemeData appTheme() {
     */
   );
 }
-
+/*
 const MaterialColor customPrimary =
     const MaterialColor(0xFFCF0038, const <int, Color>{
   50: const Color(0xFFf9e0e7),
@@ -42,3 +42,4 @@ const MaterialColor customPrimary =
   800: const Color(0xFFbd0024),
   900: const Color(0xFFb20017),
 });
+*/

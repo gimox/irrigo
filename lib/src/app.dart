@@ -11,19 +11,24 @@ import 'package:irrigo/src/routes.dart';
 import 'package:irrigo/src/theme.dart';
 import 'package:irrigo/app_config.dart';
 import 'package:irrigo/src/internationalization/app_localization_delegate.dart';
+import 'package:scoped_model/scoped_model.dart';
+import 'package:irrigo/src/models/app_state_model.dart';
 
 /// main app init,
 /// change only if you know what are you doing.... so do not change it !!
 class App extends StatelessWidget {
-  const App({
-    Key key,
-  }) : super(key: key);
+  final AppStateModel appStateModel;
+
+  const App({Key key, @required this.appStateModel}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final config = AppConfig.of(context);
 
-    return _buildMaterialApp(context, config);
+    return ScopedModel<AppStateModel>(
+      model: appStateModel,
+      child: _buildMaterialApp(context, config),
+    );
   }
 
   Widget _buildMaterialApp(BuildContext context, AppConfig config) {

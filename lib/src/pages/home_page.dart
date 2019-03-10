@@ -6,6 +6,8 @@
  */
 
 import 'package:flutter/material.dart';
+import 'package:irrigo/src/models/app_state_model.dart';
+import 'package:scoped_model/scoped_model.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -13,9 +15,24 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('HOME'),
+        actions: <Widget>[
+          IconButton(icon: Icon(Icons.settings), onPressed: (){})
+        ],
       ),
-      body: Center(
-        child: Text('PROVA'),
+      body: Column(children: <Widget>[
+        Center(
+          child: ScopedModelDescendant<AppStateModel>(
+            builder: (context, child, model) => Text(model.counter.toString(),
+                style: Theme.of(context).textTheme.display1),
+          ),
+        )
+      ]),
+      floatingActionButton: ScopedModelDescendant<AppStateModel>(
+        builder: (context, child, model) => FloatingActionButton(
+              onPressed: model.increment,
+              tooltip: 'Increment',
+              child: Icon(Icons.add),
+            ),
       ),
     );
   }
